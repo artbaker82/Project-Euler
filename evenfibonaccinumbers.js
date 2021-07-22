@@ -3,13 +3,10 @@
 //generate fib nums in a given range, after each nu,ber is generated, test if it is even, add to sum if even
 
 const fiboEvenSum = (num) => {
-  let sum = 0;
   let fiboArr = [1, 2];
-  //   let highestValIndex = {
-  //       index: fiboArr.length - 1,
-  //     };
-  while (fiboArr[fiboArr.length - 1] <= num) {
-    let numToAdd = fiboArr[fiboArr.length - 1] + fiboArr[fiboArr.length - 2];
+  const getLastIndex = (arr) => arr.length - 1;
+  while (fiboArr[getLastIndex(fiboArr)] <= num) {
+    let numToAdd = fiboArr[getLastIndex(fiboArr)] + fiboArr[getLastIndex(fiboArr) - 1];
 
     fiboArr.push(numToAdd);
   }
@@ -24,4 +21,4 @@ const fiboEvenSum = (num) => {
     }, 0);
 };
 
-console.log(fiboEvenSum(4000000));
+console.log(fiboEvenSum(100000));
