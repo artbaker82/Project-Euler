@@ -6,7 +6,7 @@ const isPrime = (num) => {
 
   const sqrt = Math.ceil(Math.sqrt(num));
   const listOfPrimes = primesUnderVal(sqrt);
-  //console.log(listOfPrimes);
+  console.log(listOfPrimes);
   //if num is divisible by any of the primes less than the square root of num, then num is not prime
   return !listOfPrimes.some((prime) => num % prime === 0);
 };
@@ -15,6 +15,7 @@ const primesUnderVal = (num) => {
   let primes = Array(num + 1).fill(true);
   primes[0] = false;
   primes[1] = false;
+
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (primes[i]) {
       for (let j = i * 2; j <= num; j += i) {
@@ -22,6 +23,7 @@ const primesUnderVal = (num) => {
       }
     }
   }
+  //convert array of true and false values to array of all primes less than num
   return primes.map((x, index) => (x ? index : null)).filter((x) => x);
 };
 
