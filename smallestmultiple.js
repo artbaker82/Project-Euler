@@ -39,8 +39,6 @@ const findGCD = (a, b) => {
   return findGCD(b, a % b);
 };
 
-//console.log(findGCD(252, 105));
-
 const findLcm = (a, b) => (a * b) / findGCD(a, b);
 
 const smallestMult = (n) => {
