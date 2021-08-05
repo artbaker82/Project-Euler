@@ -16,7 +16,7 @@
 //start n = 1, loop through m while m < 50
 
 const specialPythagoreanTriplet = (num) => {
-  let triples = [];
+  
   // let n = 1;
   // let m = 2;
   // loop through n
